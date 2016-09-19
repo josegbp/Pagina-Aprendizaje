@@ -1,0 +1,166 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"> 
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Daniel" />
+
+	<title>Aprendizaje para Algoritmo</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://miguelmanchego.com/samples/2014/jquery.smooth-scroll.min.js"></script>
+    <script src="http://miguelmanchego.com/samples/2014/waypoints.min.js"></script>
+    
+    <script type="text/javascript">    
+    $(function(){
+        $('a.smoothScroll').smoothScroll({
+          offset: -80,		  
+		  scrollTarget: $(this).val()
+	   });
+       
+       // Waypoints
+       $('.post_article').waypoint(  
+        function(direction) {
+        if (direction ==='down') {            
+            var wayID = $(this).attr('id');            
+        } else {
+            var previous = $(this).prev();
+            var wayID = $(previous).attr('id');                    
+        }
+            $('.current').removeClass('current');
+            $('#main_nav a[href=#'+wayID+']').addClass('current');
+        }, { offset: '40%' });
+       
+       
+       
+       /// StickNav  
+       var stickyNavTop = $('.nav').offset().top;  
+  
+        var stickyNav = function(){  
+        var scrollTop = $(window).scrollTop();  
+       
+        if (scrollTop > stickyNavTop) {   
+            $('.nav').addClass('isStuck');  
+        } else {  
+            $('.nav').removeClass('isStuck');   
+        }  
+    };       
+    stickyNav(); 
+       $(window).scroll(function() {
+            stickyNav();  
+        });  
+    });
+    
+
+    </script>
+    
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .container {
+            width: 100%;
+            margin: auto;
+        }
+        header#head {            
+            padding: 60px 20px;
+            background-color: #fff;
+            height: 400px;
+
+        }
+        nav#topnav {
+            padding: 10px 10px;
+            background-color: #F0DD15;
+
+        }
+            nav#topnav ul {
+                list-style: none;
+           
+            }
+            nav#topnav ul li{
+                padding-left: 120px;
+                display: inline-block;
+                margin: 20px;
+            }
+            nav#topnav ul li a{
+                color:#C52E13;
+                padding: 10px 7px;
+                display: block;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 20px;
+                 
+            }            
+        .isStuck {
+            width: 100%;
+            position: fixed;
+            top:0px;
+
+        }
+        a.current {
+            font-size: 18px; 
+            font-weight: bold; 
+           background-color: #1797d7;
+        }
+        #inicio{
+            background-color: #155591;
+               }
+                 #nosotros{
+            background-color: #155591;
+               }
+                 #servicios{
+            background-color: #155591;
+               }
+                 #contacto{
+            background-color: #155591;
+               }
+               h2{color: #fff;}
+    </style>
+</head>
+
+<body>
+<header id="head">
+    <div class="container">
+       <center><img src="logoUNAD.png" style="width: 600px;height: 380px">
+       <h1 style="color: #040688;">“OBJETO VIRTUAL PARA EL APRENDIZAJE DE ALGORITMO”</h1>
+       </center>
+    </div>
+</header>
+<nav id="topnav" class="nav">
+    <div class="container">
+    <ul id="main_nav"> 
+        <li><a class="smoothScroll" href="#inicio">Inicio</a></li>
+        <li><a class="smoothScroll" href="#nosotros">Lectura</a></li>
+        <li><a class="smoothScroll" href="#servicios">Multimedia</a></li>
+        <li><a class="smoothScroll" href="#contacto">Actividades</a></li>
+             <li><a class="smoothScroll" href="#contacto">Autor</a></li>
+    </ul>
+    </div>
+</nav>
+
+<section id="main">
+    <div class="container">
+        <article id="inicio" class="post_article">
+            <h2>INICIO</h2>
+        </article>
+        
+        <article id="nosotros" class="post_article">
+            <h2>LECTURA</h2>
+
+        </article>
+        
+        <article id="servicios" class="post_article">
+            <h2>MULTIMEDIA</h2>
+        
+        </article>
+        
+        <article id="contacto" class="post_article">
+            <h2>ACTIVIDADES</h2>
+          
+        </article>
+    </div><!--container-->
+</section>
+
+</body>
+</html>

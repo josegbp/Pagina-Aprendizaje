@@ -1,0 +1,42 @@
+ .banner{
+
+
+ 	width: 640px;
+ 	height: 320px;
+ 	border: 1px;
+ 	margin: auto;
+ 	
+ 	
+ 	background-size: 100% 100%;
+ 	animation: banner 10s infinite;
+
+
+ }
+
+ @keyframes banner{
+
+ 	0%, 30%{
+			background-image: url("img/logoUNAD1.png");
+					opacity:1;
+		 	}
+
+		 	31%, 34%{
+
+		 		opacity: 0.1;
+		 	}
+
+	35%, 65%{
+
+			background-image: url("img/logo2.jpg");
+			opacity: 1;
+
+	}
+	66%, 69%{
+		opacity: 0.1;
+	}
+	70%, 100%{
+		opacity: 1;
+
+			background-image: url("img/logo3.jpg");
+		}
+ }

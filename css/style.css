@@ -1,0 +1,45 @@
+ body{
+ 	font-family: sans-serif;
+ 	margin: 0px;
+ 	padding: 0px;
+ 	color: #404040
+ }
+ #top{
+ 	height: 150px;
+ 	background-color: 
+}
+
+.contenedor {
+	width: 978px;
+	margin: 0 auto;
+}
+
+#logo {
+	background-image: url(img/logo.jpg);
+	width: 458px;
+	height: 104px;
+}
+
+nav{
+	margin-top: 10px;
+
+}
+nav a{
+	text-decoration: none;
+	color: blue;
+	padding: 10px 10px;
+}
+#post{
+	width: 80%;
+	float:left;
+	line-height: 1.5;
+}
+
+#sideber{
+	width: 15%;
+	float: right;
+}
+
+
+
+}
